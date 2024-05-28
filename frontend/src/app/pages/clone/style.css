@@ -1,0 +1,53 @@
+#button1::before {
+    content: "쇼핑몰 창업";
+    line-height: 220px;
+    color : white;
+  }
+#button1:hover::before {
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    align-items: center;
+    color : #00BFFF;
+    content: "누구나 손쉽게 나만의 쇼핑몰을 만드세요";
+  }
+  #button2::before {
+    content: "오픈마켓 판매";
+    line-height: 220px;
+    color : white;
+  }
+#button2:hover::before {
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    align-items: center;
+    color : #00BFFF;
+    content: "쇼핑몰 확장으로 더 높은 매출을 창출하세요";
+    
+  }
+  #button3::before {
+    color : white;
+    content: "해외 진출";
+    line-height: 220px;
+  }
+#button3:hover::before {
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    align-items: center;
+    color : #FFA500;
+    content: "글로벌 마켓 진출로 비지니스를 확장하세요";
+  }
+  #button4::before {
+    color : white;
+    content: "광고 마케팅";
+    line-height: 220px;
+  }
+#button4:hover::before {
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    align-items: center;
+    color : #3CB371;
+    content: "데이터 기반의 마케팅 컨설팅을 제공합니다";
+  }

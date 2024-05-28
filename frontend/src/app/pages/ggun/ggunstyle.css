@@ -1,0 +1,58 @@
+#button1::before {
+    content: "실시간 인기종목";
+    line-height: 220px;
+    color : white;
+  }
+#button1:hover::before {
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    align-items: center;
+    color : #00BFFF;
+    content: "실시간 인기 주식을 한눈에 알아보세요";
+  }
+  #button2::before {
+    content: "내 주식차트";
+    line-height: 220px;
+    color : white;
+  }
+#button2:hover::before {
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    align-items: center;
+    color : #E598BB;
+    content: "내가 가지고 있는 주식의 변동을 확인하세요";
+    
+  }
+  #button3::before {
+    color : white;
+    content: "경제뉴스";
+    line-height: 220px;
+  }
+#button3:hover::before {
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    align-items: center;
+    color : #FFA500;
+    content: "지금 핫한 경제 뉴스를 한눈에 알아보세요";
+  }
+  #button4::before {
+    color : white;
+    content: "시장지수";
+    line-height: 220px;
+  }
+#button4:hover::before {
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    align-items: center;
+    color : #3CB371;
+    content: "변동하는 시장주가를 빠르게 확인하세요";
+  }
+#header{
+  position: relative;
+  top: 5px;
+  right: 150px;
+}

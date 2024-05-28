@@ -4,7 +4,7 @@ export default function JoinPage() {
     return(<>
 
   <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-      <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 dark:text-white">
+      <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-800 to-pink-500 dark:text-white">
           <img className="hover:animate-spin w-8 h-8 mr-2 animate-[wiggle_1s_ease-in-out_infinite]"  src="https://img.freepik.com/premium-vector/palms-icon-logo-vector-design-template_827767-3845.jpg"  alt="logo"></img>
           회원가입창    
       </a>
