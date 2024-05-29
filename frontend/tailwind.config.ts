@@ -24,7 +24,8 @@ const config: Config = {
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
         test: 'test 3s ease-in-out infinite',
-        test1: 'test1 3s ease-in-out infinite'
+        test1: 'test1 3s ease-in-out infinite',
+        test2: 'test2 3s ease-in-out infinite'
       },
       keyframes: {
         wiggle: {
@@ -38,6 +39,10 @@ const config: Config = {
           '0%': { transform: 'bg-white' },
           '50%': {transform: 'bg-pink-300' },
           '100%': { transform: 'bg-black' },
+        },
+        test2:{
+          '0%': { transform: 'bg-chart' },
+          '50%': {transform: 'bg-paperBg' },
         }
       }
     },

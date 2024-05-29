@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Account from "@/components/common/pages/account";
 import History from "@/components/common/pages/history";
-
+import "@/app/pages/account/accountstyle.css";
 
 export default function Accout(){
     const [isTest,setIsTest] = useState(false);
@@ -31,16 +31,16 @@ export default function Accout(){
         </ul>
     </div>
     
-    <div className='bg-chart'>
+    <div className='' id='bar'>
     <hr className="my-5"/>
     <div className="text-4xl font-bold my-28 ml-72 text-pink-200">ai투자안내</div>
-    <div className="text-2xl mt-28 my-28 ml-72 text-pink-200">여러분의 자금을 안전하게 관리해주는 ai계좌 서비스입니다</div>
+    <div className="text-2xl mt-28 ml-72 h-24 text-pink-200">여러분의 자금을 안전하게 관리해주는 ai계좌 서비스입니다</div>
     </div>
+    <hr className="border-purple-800 border-2"/>
     <div className="ml-72 ">
     <button className="border-gray-200 border-2" onClick={handleAccount} >{isTest ?  <button className="border-purple-800 border-2">계좌관리</button>:"계좌관리"}</button>
     <button className="border-gray-200 border-2" onClick={handleHistory} >{isTest1 ?  <button className="border-purple-800 border-2">거래내역</button>:"거래내역"}</button>
     </div>
-    <hr className="border-purple-800 border-2"/>
     {isTest ? <Account/> : <History/>}
     </>)
 }

@@ -11,6 +11,11 @@
     color : #00BFFF;
     content: "실시간 인기 주식을 한눈에 알아보세요";
   }
+  #button1{
+    transition-property : background-color, color;
+    transition-duration : 0.6s;
+
+  }
   #button2::before {
     content: "내 주식차트";
     line-height: 220px;
@@ -25,6 +30,11 @@
     content: "내가 가지고 있는 주식의 변동을 확인하세요";
     
   }
+  #button2{
+    transition-property : background-color, color;
+    transition-duration : 0.6s;
+
+  }
   #button3::before {
     color : white;
     content: "경제뉴스";
@@ -38,6 +48,11 @@
     color : #FFA500;
     content: "지금 핫한 경제 뉴스를 한눈에 알아보세요";
   }
+  #button3{
+    transition-property : background-color, color;
+    transition-duration : 0.6s;
+
+  }
   #button4::before {
     color : white;
     content: "시장지수";
@@ -50,6 +65,11 @@
     align-items: center;
     color : #3CB371;
     content: "변동하는 시장주가를 빠르게 확인하세요";
+  }
+  #button4{
+    transition-property : background-color, color;
+    transition-duration : 0.6s;
+
   }
 #header{
   position: relative;

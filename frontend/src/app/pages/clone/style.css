@@ -11,10 +11,20 @@
     color : #00BFFF;
     content: "누구나 손쉽게 나만의 쇼핑몰을 만드세요";
   }
+  #button1{
+    transition-property : background-color, color;
+    transition-duration : 0.6s;
+
+  }
   #button2::before {
     content: "오픈마켓 판매";
     line-height: 220px;
     color : white;
+  }
+  #button2{
+    transition-property : background-color, color;
+    transition-duration : 0.6s;
+
   }
 #button2:hover::before {
     display: inline-block;
@@ -38,6 +48,11 @@
     color : #FFA500;
     content: "글로벌 마켓 진출로 비지니스를 확장하세요";
   }
+  #button3{
+    transition-property : background-color, color;
+    transition-duration : 0.6s;
+
+  }
   #button4::before {
     color : white;
     content: "광고 마케팅";
@@ -50,4 +65,9 @@
     align-items: center;
     color : #3CB371;
     content: "데이터 기반의 마케팅 컨설팅을 제공합니다";
+  }
+  #button4{
+    transition-property : background-color, color;
+    transition-duration : 0.6s;
+
   }
