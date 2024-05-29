@@ -1,0 +1,16 @@
+th{
+    border : 1px solid gray;
+}
+.col1{
+    width : 150px;
+}
+.col2{
+    width : 300px;
+    background-color : #FFE3EE;
+}.col3{
+    width : 200px;
+    
+}.col4{
+    width : 150px;
+    background-color : #FFE3EE;
+}

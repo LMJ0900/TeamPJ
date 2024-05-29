@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {Pagination } from "@mui/material";
 import { useRouter } from "next/navigation";
 import NavbarHeader from "@/components/common/module/navbarHeader";
@@ -10,15 +10,18 @@ import Card from "@/components/common/module/card";
 import TableList from "@/components/users/module/colums";
 
 
-
 export default function Home() {
-
+    const [isTest,setIsTest] = useState(false);
+    
     const router = useRouter();
     const handleChart = (()=>{
         router.push('/pages/chart')
     })
     const handleLogin = (()=>{
         router.push('/pages/users/login')
+    })
+    const handleClock = (()=>{
+       setIsTest((preIstest)=> !preIstest);
     })
 
     useEffect(() => {
@@ -30,7 +33,10 @@ export default function Home() {
         
         <NavbarHeader/>
         <Search/>
-        <ClockPage/>
+        {/* <ClockPage/> */}
+        <button onClick={handleClock} disabled={isTest}>
+            {isTest ? <ClockPage/>:"테스트"}
+        </button>
         <h2 className="border-solid border-2 text-yellow-500" > 테이블2</h2>
         <Card/>
             <div className="h-dvh w-dvw flex justify-center items-center">

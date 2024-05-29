@@ -1,4 +1,5 @@
 import Button1 from "@/components/common/module/button"
+
 import "@/app/pages/clone/style.css"
 export default function Clone(){
     return(<>
