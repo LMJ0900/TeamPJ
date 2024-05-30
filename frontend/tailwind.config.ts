@@ -21,6 +21,13 @@ const config: Config = {
         'font1':['font1'],
         'font2':['font2']
       },
+      margin:{
+        '440px' : '440px',
+        '150px' : '150px',
+      },
+      screens:{
+        'desktop': '1600px',
+      },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
         test: 'test 3s ease-in-out infinite',
@@ -43,7 +50,7 @@ const config: Config = {
         test2:{
           '0%': { transform: 'bg-chart' },
           '50%': {transform: 'bg-paperBg' },
-        }
+        },
       }
     },
   },
