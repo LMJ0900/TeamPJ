@@ -2,7 +2,7 @@ import Header from "@/components/common/module/soomgo/header"
 import Searchbar from "@/components/common/module/soomgo/searchbar"
 import Cartegori from "@/components/common/module/soomgo/cartegori"
 import Banner from "@/components/common/module/soomgo/banner"
-
+import ServiceCart from "@/components/common/module/soomgo/serviceCart"
 export default function Soomgo(){
     return(
         <div className="lg:max-desktop:ml-[10vw] lg:max-desktop:mr-[10vw] desktop:ml-[20vw] desktop:mr-[20vw]">
@@ -14,6 +14,9 @@ export default function Soomgo(){
             <Cartegori/>
             <div>
             <Banner/>
+            </div>
+            <div>
+            <ServiceCart/>
             </div>
         </div>
     )

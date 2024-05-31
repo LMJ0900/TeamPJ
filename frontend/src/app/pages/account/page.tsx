@@ -5,15 +5,15 @@ import History from "@/components/common/pages/history";
 import "@/app/pages/account/accountstyle.css";
 
 export default function Accout(){
-    const [isTest,setIsTest] = useState(false);
-    const [isTest1,setIsTest1] = useState(false);
+    const [isAccount,setIsAccount] = useState(false);
+    const [isHistory,setIsHistory] = useState(false);
     const handleAccount = ()=>{
-        setIsTest(true);
-        setIsTest1(false);
+        setIsAccount(true);
+        setIsHistory(false);
     }
     const handleHistory = ()=>{
-        setIsTest1(true);
-        setIsTest(false);
+        setIsHistory(true);
+        setIsAccount(false);
     }
     return(<>
      <div className="flex bg-white text-black top-0 py-3 flex-wrap justify-around bg-silver text-2xl">
@@ -38,9 +38,9 @@ export default function Accout(){
     </div>
     <hr className="border-purple-800 border-2"/>
     <div className="ml-72 ">
-    <button className="border-gray-200 border-2" onClick={handleAccount} >{isTest ?  <button className="border-purple-800 border-2">계좌관리</button>:"계좌관리"}</button>
-    <button className="border-gray-200 border-2" onClick={handleHistory} >{isTest1 ?  <button className="border-purple-800 border-2">거래내역</button>:"거래내역"}</button>
+    <button className="border-gray-200 border-2" onClick={handleAccount} >{isAccount ?  <button className="border-purple-800 border-2">계좌관리</button>:"계좌관리"}</button>
+    <button className="border-gray-200 border-2" onClick={handleHistory} >{isHistory ?  <button className="border-purple-800 border-2">거래내역</button>:"거래내역"}</button>
     </div>
-    {isTest ? <Account/> : <History/>}
+    {isAccount ? <Account/> : <History/>}
     </>)
 }
