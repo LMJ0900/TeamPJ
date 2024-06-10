@@ -12,7 +12,7 @@ export default function Main() {
         setIsAnimating(true);
     }
     return (<>
-        <div className="flex items-center justify-center bg-[--color-pebble-4] h-[100vh]">
+        <div className="flex items-center justify-center bg-[--color-pebble-4t] h-[100vh]">
             <div className=" relative mt-30">
                 <div className="flex bg-white w-[50rem] h-[30rem] rounded-[10px] z-10 flex-row">
                     <div className="flex items-center flex-col w-[25rem] h-[30rem]">
