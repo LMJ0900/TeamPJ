@@ -29,12 +29,17 @@ const config: Config = {
         'desktop': '1600px',
       },
       animation: {
+        TransRight: 'TransRight 1.5s ease-in-out',
         wiggle: 'wiggle 1s ease-in-out infinite',
         test: 'test 3s ease-in-out infinite',
         test1: 'test1 3s ease-in-out infinite',
-        test2: 'test2 3s ease-in-out infinite'
+        test2: 'test2 3s ease-in-out infinite',
       },
       keyframes: {
+        TransRight: {
+          '0%': { transform: 'translateX(0rem)' },
+          '100%': { transform: 'translateX(23rem)' },
+        },
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' },
