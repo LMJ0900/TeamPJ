@@ -29,6 +29,7 @@ const config: Config = {
         'desktop': '1600px',
       },
       animation: {
+        Transleft: 'TransRight 1.5s ease-in-out',
         TransRight: 'TransRight 1.5s ease-in-out',
         wiggle: 'wiggle 1s ease-in-out infinite',
         test: 'test 3s ease-in-out infinite',
@@ -36,6 +37,10 @@ const config: Config = {
         test2: 'test2 3s ease-in-out infinite',
       },
       keyframes: {
+        Transleft: {
+          '0%': { transform: 'translateX(23rem)' },
+          '100%': { transform: 'translateX(0rem)' },
+        },
         TransRight: {
           '0%': { transform: 'translateX(0rem)' },
           '100%': { transform: 'translateX(23rem)' },

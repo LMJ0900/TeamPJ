@@ -1,82 +1,47 @@
 'use client'
-
-import { useEffect, useState } from "react";
-import {Pagination } from "@mui/material";
+import LoginBar from "@/components/common/module/login/login"
+import JoinBar from "@/components/common/module/join/joinBar";
+import { useState } from "react";
+import JoinBack from "@/components/common/module/join/joinBack";
 import { useRouter } from "next/navigation";
-import NavbarHeader from "@/components/common/module/navbarHeader";
-import Search from "@/components/common/module/searchBar";
-import ClockPage from "@/components/common/module/clock";
-import Card from "@/components/common/module/card";
-import TableList from "@/components/users/module/colums";
+import { IUser } from "@/components/users/model/user.model";
 
-
-export default function Home() {
-    const [isTest,setIsTest] = useState(false);
-    
+export default function Main() {
+    const [isLogin, setIsLogin] = useState(true);
+    const [isAnimating, setIsAnimating] = useState(false);
     const router = useRouter();
-    const handleChart = (()=>{
-        router.push('/pages/chart')
-    })
-    const handleLogin = (()=>{
-        router.push('/pages/users/login')
-    })
-    const handleClock = (()=>{
-       setIsTest((preIstest)=> !preIstest);
-    })
 
-    useEffect(() => {
-           
-    }, [])
 
-    return (
-    <div>
-        
-        <NavbarHeader/>
-        <Search/>
-        {/* <ClockPage/> */}
-        <button onClick={handleClock} disabled={isTest}>
-            {isTest ? <ClockPage/>:"테스트"}
-        </button>
-        <h2 className="border-solid border-2 text-yellow-500" > 테이블2</h2>
-        <Card/>
-            <div className="h-dvh w-dvw flex justify-center items-center">
-        <table className=" border-solid border-black-2 w-1/2 text-sm text-center text-green-500 dark:text-gray-400 ">
-            <thead className="text-xs text-red-700 uppercase bg-gray-50 ">
-                <tr>
-                    <th scope="col" className="px-4 py-3 border-l-2 border-t-2 border-red-600">번호</th>
-                    <th scope="col" className="px-4 py-3 border-x-2 border-t-2 border-red-600">제목</th>
-                    <th scope="col" className="px-4 py-3 border-t-2 border-red-600">작성자</th>
-                    <th scope="col" className="px-4 py-3 border-t-2 border-x-2 border-red-600">조회
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                {TableList.map((i) => (
-                    <tr key={i.id}>
-                        <td className="px-4 py-3 border-solid hover:border-dotted border-2 border-indigo-600 ring-offset-4 ring-2 ring-blue-600 ring-inset bg-white" >{i.id}</td>
-                        <td className="border-solid  hover:border-dotted border-2 border-indigo-600 ring-offset-4 ring-2 ring-red-600 ring-inset  bg-white">{i.title}</td>
-                        <td className="border-solid border-2 border-indigo-600 hover:border-dotted ring-offset-4 ring-2 ring-green-600 ring-inset  bg-white">{i.writer}</td>
-                        <td className="border-solid border-2 border-indigo-600 hover:border-dotted ring-offset-4 ring-2 ring-orange-600 ring-inset  bg-white">{i.road}</td>
-                    </tr>
-                ))
-                
-                }
-               
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colSpan={4}>
-                        <div className="flex items-center bg-gray-200">
-                    <Pagination count={10} color="secondary" />
-                    </div>
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
-        </div>
-        <button onClick={handleChart}> 다음페이지 </button><br />
-        <button onClick={handleLogin}> 로그인페이지</button>
-    </div>
+    const handlePage = () => {
+        setIsLogin(false);
+        setIsAnimating(true);
+    }
+    const handlePage1 = () => {
+        setIsLogin(true);
+        setIsAnimating(false);
+    }
     
-    )
+    return (<>
+        <div className="flex items-center justify-center bg-[--color-pebble-4] h-[100vh]">
+            <div className=" relative mt-30">
+                <div className="flex bg-white w-[50rem] h-[30rem] rounded-[10px] z-10 flex-row">
+                    <div className="flex items-center flex-col w-[25rem] h-[30rem]">
+                        <h2 className="mt-[3rem] ml-[3rem] text-[3rem] font-semibold text-[--color-pebble-2]">stock&<br /><p className="text-[--color-pebble-3]">Automatic</p></h2>
+                        <h3 className="mt-[3rem]">주식꾼과 함께하세요</h3>
+                        <button className="mt-[5rem] border-pink-400 text-pink-400 border-2 rounded-[20px] w-[7rem] h-[3rem]  font-semibold" onClick={handlePage1}>login</button>
+                    </div>
+                    <div className="flex items-center flex-col w-[25rem] h-[30rem]">
+                        <h2 className="mt-[3rem]  text-[3rem] font-semibold text-[--color-pebble-3]">stock&<br /><p className="text-[--color-pebble-2]">Automatic</p></h2>
+                        <h3 className="mt-[3rem]">나만의 주식꾼을 불러주세요</h3>
+                        <button className="mt-[5rem] border-purple-400 text-purple-400 hover:text-[#872642] border-2 rounded-[20px] w-[7rem] h-[3rem]  font-semibold" onClick={handlePage}>Sign in</button>
+                    </div>
+                </div>
+                <div className={`flex items-center absolute top-[-5rem] left-[1rem] h-[40rem] w-[23rem] bg-[--color-pebble-1] rounded-[10px] flex-col z-0 ${isAnimating ? "animate-[TransRight_1.5s_ease-in-out_forwards]" : "animate-[Transleft_1.5s_ease-in-out_forwards]"}`} id="LoginBack">
+                    {isLogin ? <LoginBar /> : <JoinBar />}
+                </div>
+            </div>
+        </div >
+
+    </>)
+
 }
