@@ -6,7 +6,7 @@ export default function JoinBar(){
         <input className="border-b-2 bg-inherit w-[16rem] h-[3rem]" type="password" name="id" id="id" placeholder="password" ></input>
         <input className="border-b-2 bg-inherit w-[16rem] h-[3rem]" type="name" name="name" id="name" placeholder="name" ></input>
         <input className="border-b-2 bg-inherit w-[16rem] h-[3rem]" type="phone" name="phone" id="phone" placeholder="010-****-****" ></input>
-        <button className="mt-14 border-white border-2 rounded-[20px] w-[7rem] h-[3rem] text-white font-semibold">Join</button>
+        <button type="submit" className="mt-14 border-white border-2 rounded-[20px] w-[7rem] h-[3rem] text-white font-semibold">Join</button>
         </div>
     </>)
 }

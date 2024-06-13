@@ -1,7 +1,9 @@
 'use client'
 import { IUser } from "@/components/users/model/user.model";
+import { existsByUsername, login } from "@/components/users/service/user.service";
 import { getExistsByUsername } from "@/components/users/service/user.slice";
 import { useRouter } from "next/navigation";
+import { setCookie } from "nookies";
 import { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -34,6 +36,43 @@ export default function LoginBar(){
             username: e.target.value
           })
     }
+    const handleSubmit =()=>{
+        dispatch(existsByUsername(user.username))
+        .then((res:any)=>{
+            if(res.payload === true){
+                dispatch(login(user))
+                .then((resp:any)=>{
+                    setCookie({}, 'message', resp.payload.message, { httpOnly: false, path: '/' })
+                    setCookie({}, 'accessToken', resp.payload.accessToken, { httpOnly: false, path: '/' })
+                    router.push('/pages/ggun')
+                })
+                .catch((err: any)=>{
+                    console.log('로그인 실패')
+                  })
+            }else{
+                console.log('아이디가 존재하지 않습니다')
+                console.log('아이디 확인 : ' + existUser)
+                SetIsWrongId(false)
+                SetIsTrueId(false)
+                setBeforeSubmit(false)
+              }
+        })
+        //이해 안되는 부분
+        .catch((err:any)=>{
+            console.log('catch 로직 err 발생 :' + `${err}`)
+          })
+        
+          .finally(()=>{
+            console.log('최종적으로 반드시 이뤄져야 할 로직')
+          })
+           //dispatch(login(user))
+           SetIsWrongId(false)
+           SetIsTrueId(false)
+           setBeforeSubmit(false)
+           if(formRef.current){
+            formRef.current.value = "";
+           }
+        }
 
     return(<>
         <h2 className="mt-24 text-white text-[3rem]">Login</h2>
@@ -55,7 +94,7 @@ export default function LoginBar(){
               </h6>
             </pre>)}
         <input className="border-b-2 bg-inherit w-[16rem] h-[3rem]" type="password" name="id" id="id" placeholder="password" ></input>
-        <button className="mt-24 border-white border-2 rounded-[20px] w-[7rem] h-[3rem] text-white font-semibold">Login</button>
+        <button type="submit" onClick={handleSubmit} className="mt-24 border-white border-2 rounded-[20px] w-[7rem] h-[3rem] text-white font-semibold">Login</button>
         </div>
     </>)
 }
