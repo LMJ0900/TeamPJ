@@ -1,4 +1,9 @@
+'use client'
+
+import { useRouter } from "next/navigation";
+
 export default function Header() {
+  const router = useRouter();
     return(<>
     <div className="flex items-center bg-[--color-pebble-1] text-white w-full h-[4.5rem]">
         <div className="mb-5">
@@ -6,7 +11,7 @@ export default function Header() {
         </div>
         <ul className="flex gap-[3rem] ml-[5rem] cursor-pointer text-[1rem]">
           <li><a href="#" className="hover:text-[--color-pebble-3]">계좌개설</a></li>
-          <li><a href="#" className="hover:text-[--color-pebble-3]">나의계좌</a></li>
+          <li><a href="/pages/account" className="hover:text-[--color-pebble-3]">나의계좌</a></li>
           <li><a href="#" className="hover:text-[--color-pebble-3]">머시기</a></li>
           <li><a href="#" className="hover:text-[--color-pebble-3]">머가들어감</a></li>
           <li><a href="#" className="hover:text-[--color-pebble-3]">계좌개설</a></li>
