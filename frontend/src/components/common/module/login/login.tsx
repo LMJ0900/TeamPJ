@@ -44,7 +44,7 @@ export default function LoginBar(){
                 .then((resp:any)=>{
                     setCookie({}, 'message', resp.payload.message, { httpOnly: false, path: '/' })
                     setCookie({}, 'accessToken', resp.payload.accessToken, { httpOnly: false, path: '/' })
-                    router.push('/pages/ggun')
+                    router.push('/pages/ggun/main')
                 })
                 .catch((err: any)=>{
                     console.log('로그인 실패')

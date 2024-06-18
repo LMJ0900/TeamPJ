@@ -2,7 +2,8 @@
 import { useState } from 'react';
 import Account from "@/components/common/pages/account";
 import History from "@/components/common/pages/history";
-import "@/app/pages/account/accountstyle.css";
+import "@/app/pages/ggun/account/accountstyle.css";
+import Header from '@/components/common/module/ggun/main/header';
 
 export default function Accout(){
     const [isAccount,setIsAccount] = useState(false);
@@ -16,23 +17,15 @@ export default function Accout(){
         setIsAccount(false);
     }
     return(<>
-     <div className="flex bg-white text-black top-0 py-3 flex-wrap justify-around bg-silver text-2xl">
+     <div>
         <head>
             <title>내 계좌 관리</title>
         </head>  
-        <h1 className="text-purple-800 font-semibold">ggun</h1>
-        <ul id="header" className="flex gap-[30px]">
-          <li>고민중</li>
-          <li>계좌</li>
-          <li>실시간 호가차트</li>
-          <li>AI</li>
-          <li>경제뉴스</li>
-          <li>마이페이지</li>
-        </ul>
+        <Header></Header>
     </div>
     
     <div className='' id='bar'>
-    <hr className="my-5"/>
+    <hr className=""/>
     <div className="text-4xl font-bold my-28 ml-72 text-pink-200">ai투자안내</div>
     <div className="text-2xl mt-28 ml-72 h-24 text-pink-200">여러분의 자금을 안전하게 관리해주는 ai계좌 서비스입니다</div>
     </div>
